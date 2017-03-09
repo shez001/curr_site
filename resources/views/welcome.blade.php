@@ -79,10 +79,21 @@
 
             <div class="content">
                 
-                <div class="form">
-                    
-                    
-                </div>
+              {!! Form::open(['url' => 'foo/bar']) !!}
+              
+              
+              {!! 
+              
+                    Form::email('email', null, null)
+                
+                !!}
+                {!! 
+                    Form::submit('Sign In!')
+              
+                !!}
+                
+                <input type="button" onclick="window.location='https://php.net'" value="Sign Up"/>
+              {!! Form::close() !!}
 
                
             </div>
