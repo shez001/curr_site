@@ -23,32 +23,17 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('https://php.net') }}" target="blank"><input type="button"  value="Sign Up"/></a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
-                
-              {!! Form::open(['url' => 'Account/Login']) !!}
-              
-              
-              <div class="form-group"> 
-                  <span> Email:  </span> {!! Form::email('email') !!}
-              </div> 
-              <div class="form-group"> 
-                  <span> Password:  </span> {!! Form::password('password') !!}
-              </div> 
-              <div class="form-group">  
-              {!! 
-                    Form::submit('Sign In!')
-              
-              !!}
-              </div>
+            
               
                 
-                <input type="button" onclick="window.open('https://php.net')" value="Sign Up"/>
-              {!! Form::close() !!}
+                
+            
 
                
             </div>
