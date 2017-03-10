@@ -22,7 +22,7 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/login') }}"><input type="button"  value="Login"/></a>
                         <a href="{{ url('https://php.net') }}" target="blank"><input type="button"  value="Sign Up"/></a>
                     @endif
                 </div>
