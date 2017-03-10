@@ -14,6 +14,13 @@ class CreateAuditTable extends Migration
     public function up()
     {
         //
+        Schema::create('audit_logs',  function (Blueprint $table){
+            $table->increments('id');
+            $table->string('user');
+            $table->string('transaction');
+            $table->timestamp('transaction_date');
+            
+        });
     }
 
     /**

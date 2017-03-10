@@ -14,6 +14,11 @@ class CreateExchangeTable extends Migration
     public function up()
     {
         //
+        Schema::create('exchange',  function (Blueprint $table){
+            $table->increments('id');
+            $table->integer('curr_id');
+            $table->float('value_to_one_dollar',10,2);
+        });
     }
 
     /**
