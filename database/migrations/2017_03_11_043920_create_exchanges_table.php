@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExchangeTable extends Migration
+class CreateExchangesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateExchangeTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('exchange',  function (Blueprint $table){
+        Schema::create('exchanges', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('curr_id');
+            $table->integer('currencies_id');
             $table->float('value_to_one_dollar',10,2);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateExchangeTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('exchanges');
     }
 }
