@@ -50,7 +50,7 @@ class CurrencyController extends Controller
     public function show($id)
     {
         //
-        return \App\Currency::findOrFail($id);
+        return Currency::findOrFail($id);
     }
 
     /**
