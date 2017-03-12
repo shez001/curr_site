@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Currency;
 
-class CurrencyController extends Controller
+class ExchangeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,6 @@ class CurrencyController extends Controller
     public function index()
     {
         //
-         return view('currencies.index', ['currencies'=>  Currency::all()]);
     }
 
     /**
@@ -26,8 +24,6 @@ class CurrencyController extends Controller
     public function create()
     {
         //
-       return view('currencies.create');
-        
     }
 
     /**
@@ -50,7 +46,6 @@ class CurrencyController extends Controller
     public function show($id)
     {
         //
-        return \App\Currency::findOrFail($id);
     }
 
     /**
