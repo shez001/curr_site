@@ -30,6 +30,18 @@
                             
                         </form>
                         
+                        <h2>Convert Currecny:</h2>
+                        <form name="exchange_form" id="exchange_form" method="POST">
+                            {{ csrf_field() }}
+                            From exchange: <select name="from_currency_list" id="from_currency_list"></select>
+                            To exchange: <select name="to_currency_list" id="to_currency_list"></select>
+                            
+                            Amount to convert: <input name="exchange_input" id="exchange_input" type="number"/><br>
+                            Amount to receive: <input name="exchange_output" id="exchange_output" readonly="readonly" type="number"/>
+                            
+                        </form>
+                        
+                        
                     </div>
                     
                 </div>

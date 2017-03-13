@@ -22,6 +22,8 @@ $(document).ready(function(){
                   }
                   
                   $("#currency_list").html(optionHtml);
+                  $("#from_currency_list").html(optionHtml);
+                  $("#to_currency_list").html(optionHtml);
                },
                error: function(jqXHR, textStatus, errorThrown) {
                   console.log(textStatus, errorThrown);
@@ -77,6 +79,29 @@ $(document).ready(function(){
            });
    
    
+   });
+   
+   $("#exchange_input").keyup(function(){
+       
+       var values = $("#exchange_form").serialize();
+        
+        $.ajax({
+               url: "/curr_site/public/exchange/calculate",
+               type: "post",
+               data: values ,
+               success: function (response) {
+                  // you will get response from your php page (what you echo or print)     
+                  data = JSON.parse(response);
+                  $("#exchange_output").val(data.exchange_value);
+                    
+               },
+               error: function(jqXHR, textStatus, errorThrown) {
+                  console.log(textStatus, errorThrown);
+               }
+
+
+           });
+       
    });
     
  

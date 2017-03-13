@@ -25,4 +25,6 @@ Route::get('/home', 'HomeController@index');
 Route::post('currency/add','CurrencyController@store');
 Route::get('currency/get','CurrencyController@index');
 Route::post('exchange/add','ExchangeController@store');
+Route::post('exchange/calculate','ExchangeController@calculate');
+
 
