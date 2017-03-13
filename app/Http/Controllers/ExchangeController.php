@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Exchange;
 
 class ExchangeController extends Controller
 {
@@ -35,6 +36,13 @@ class ExchangeController extends Controller
     public function store(Request $request)
     {
         //
+        $exchange = new Exchange();
+        
+        $exchange->currencies_id = $request->input('currency_list');
+        $exchange->value_to_one_dollar = $request->input('exchange_rate');
+        $exchange->save();
+        
+        return json_encode("Added Exchange successfully");
     }
 
     /**

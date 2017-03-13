@@ -15,7 +15,8 @@ class CurrencyController extends Controller
     public function index()
     {
         //
-         return view('currencies.index', ['currencies'=>  Currency::all()]);
+        
+         return Currency::all(array('id','name'))->toJson();
     }
 
     /**
@@ -26,7 +27,7 @@ class CurrencyController extends Controller
     public function create()
     {
         //
-       return view('currencies.create');
+       return json_encode("hello");
         
     }
 
@@ -39,6 +40,13 @@ class CurrencyController extends Controller
     public function store(Request $request)
     {
         //
+        $currency = new Currency();
+        
+        $currency->name = $request->input('currency_name');
+        $currency->code = $request->input('currency_code');
+        $currency->save();
+        
+        return json_encode("Added Currency successfully");
     }
 
     /**

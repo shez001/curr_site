@@ -11,11 +11,22 @@
                     Welcome
                     
                     <div class="form-inline">
-                        <form name="add_currency_form" method="POST">
+                        
+                        <h2>Add Currency:</h2>
+                        <form name="add_currency_form" id="add_currency_form" method="POST">
                             {{ csrf_field() }}
                             <input name="currency_name" id="currency_name" type="text" placeholder="Currency Name" />
                             <input name="currency_code" id="currency_code" type="text" placeholder="Currency Code" />
                             <input name="add_currency" id="add_currency" value="Add currency" type="button" />
+                            
+                        </form>
+                        
+                        <h2>Add Exchange:</h2>
+                        <form name="add_exchange_form" id="add_exchange_form" method="POST">
+                            {{ csrf_field() }}
+                            <select name="currency_list" id="currency_list"></select>
+                            Exchange rate: <input name="exchange_rate" id="exchange_rate" type="number"/>
+                            <input name="add_currency" id="add_exchange" value="Add Exchange" type="button" />
                             
                         </form>
                         

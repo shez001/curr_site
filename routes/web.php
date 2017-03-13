@@ -22,5 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
-Route::post('currency/add','CurrencyController@create');
+Route::post('currency/add','CurrencyController@store');
+Route::get('currency/get','CurrencyController@index');
+Route::post('exchange/add','ExchangeController@store');
 
